@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e편한세상 시티 풍무역 분양대행 제안서</title>
+    <!-- 고품격 한글 폰트 Pretendard 로드 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ==========================================================================
+           1. CORE VARIABLES & SETUP
+           ========================================================================== */
+        :root {
+            --primary-color: #0b192c; /* Deep Corporate Navy */
+            --accent-color: #d97706; /* e편한세상 스타일의 프리미엄 오렌지-골드 */
+            --accent-light: #fef3c7;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==========================================================================
+           2. TYPOGRAPHY & COMMON CLASSES
+           ========================================================================== */
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section.bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .section.bg-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-title {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section.bg-primary .section-title {
+            color: white;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+        /* ==========================================================================
+           3. SPECIFIC SECTIONS
+           ========================================================================== */
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 150px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            color: white;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            color: #cbd5e1;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+
+        .hero .meta-info {
+            display: inline-block;
+            text-align: left;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        /* Overview List */
+        .overview-list li {
+            margin-bottom: 30px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        .overview-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--accent-color);
+            font-size: 22px;
+        }
+
+        .overview-list li strong {
+            display: block;
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .overview-img {
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .overview-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
+        }
+
+        /* Cards (SWOT, Team) */
+        .card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .swot-card h3 span {
+            color: var(--accent-color);
+            font-size: 32px;
+        }
+
+        .card p {
+            font-size: 17px;
+            color: var(--text-muted);
+        }
+
+        /* Icon Cards (Targeting) */
+        .icon-card {
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .icon-card .icon {
+            width: 90px;
+            height: 90px;
+            background-color: var(--accent-light);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 25px;
+        }
+
+        /* Marketing Mix */
+        .marketing-box {
+            background-color: var(--bg-white);
+            border-radius: 16px;
+            padding: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .marketing-box h3 {
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .marketing-box li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--text-muted);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .marketing-box li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 30px;
+            line-height: 1.2;
+            color: var(--accent-color);
+        }
+
+        /* Timeline / Action Plan */
+        .timeline-card {
+            background-color: var(--bg-white);
+            border-top: 5px solid var(--accent-color);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .timeline-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Why Us Section */
+        .why-us-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .why-us-item {
+            margin-bottom: 35px;
+            padding-left: 25px;
+            border-left: 4px solid var(--accent-light);
+        }
+
+        .why-us-item strong {
+            display: block;
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .why-us-item p {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        /* CTA / Footer */
+        .cta-section {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 24px;
+            color: #cbd5e1;
+            margin-bottom: 50px;
+        }
+
+        .contact-info {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 40px;
+            font-size: 18px;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 100px 0 80px; }
+            .hero h1 { font-size: 40px; }
+            .hero .subtitle { font-size: 18px; }
+            .section { padding: 60px 0; }
+            .section-title { font-size: 32px; margin-bottom: 40px; }
+            .grid { gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1><span>e편한세상 시티 풍무역</span><br>성공 분양대행 제안서</h1>
+            <p class="subtitle">실거주 수요와 투자 수요를 동시에 공략하는 맞춤형 마케팅 및 속전속결 영업 전략</p>
+            <div class="meta-info">
+                <p><strong>제출일:</strong> 2026년 3월 12일</p>
+                <p><strong>제출자:</strong> [제안사 회사명]</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Overview Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">프로젝트 이해 및 사업 개요</h2>
+            <div class="grid grid-2" style="align-items: center;">
+                <ul class="overview-list">
+                    <li>
+                        <strong>대지 위치</strong>
+                        경기도 김포시 풍무동 205번지 일원 (풍무2지구)
+                    </li>
+                    <li>
+                        <strong>건축 규모</strong>
+                        지하 6층 ~ 지상 14층, 1개동 (오피스텔 420실 및 근생)
+                    </li>
+                    <li>
+                        <strong>타입 구성</strong>
+                        35㎡ (396실 주력), 36㎡ (12실), 43㎡ (12실)
+                    </li>
+                    <li>
+                        <strong>핵심 특장점</strong>
+                        전 세대 복층형 다락구조 설계, 100% 자주식 주차(410대 확보), 1군 메이저 브랜드 (DL이앤씨)
+                    </li>
+                </ul>
+                <div class="overview-img">
+                    <!-- 대체 이미지 사용 (웹페이지용 가로형 권장) -->
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/1522940884780828336" alt="현장 조감도">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SWOT Analysis Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">부동산 시장 및 환경 분석 (SWOT)</h2>
+            <div class="grid grid-2">
+                <div class="card swot-card">
+                    <h3><span>S</span> 강점 (Strength)</h3>
+                    <p>풍무지구 최초 1군 브랜드(e편한세상)의 강력한 프리미엄. 전 세대 복층형 설계 및 오피스텔에서 보기 드문 100% 자주식 주차 확보로 독보적 상품성.</p>
+                </div>
+                <div class="card swot-card">
+                    <h3><span>W</span> 약점 (Weakness)</h3>
+                    <p>인근 오피스텔 및 대체재(소형 아파트) 기공급 물량 존재. 고금리 장기화로 인한 전반적인 수익형 부동산 투자 심리 위축 극복 필요.</p>
+                </div>
+                <div class="card swot-card">
+                    <h3><span>O</span> 기회 (Opportunity)</h3>
+                    <p>서울 5호선 및 인천 2호선 연장(계획)이라는 초대형 교통 호재. 인하대 김포메디컬캠퍼스, 한강시네폴리스 등 폭발적인 배후수요 증가.</p>
+                </div>
+                <div class="card swot-card">
+                    <h3><span>T</span> 위협 (Threat)</h3>
+                    <p>대출 규제 및 금리 변동성에 따른 매수 관망세. 타 지역 대비 김포/검단 권역의 광역적인 분양 현장 간 마케팅 경쟁 심화.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Targeting Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">타겟 세분화 및 포지셔닝</h2>
+            <div class="grid grid-3">
+                <div class="card icon-card">
+                    <div class="icon"><i class="fa-solid fa-crosshairs"></i></div>
+                    <h3>핵심 타겟 (Core)</h3>
+                    <p>김포, 강서, 마곡 권역으로 출퇴근하는 <strong>2030 직장인 및 신혼부부</strong>. 단순 투자가 아닌 하이엔드 실거주 목적의 실수요자 집중 공략.</p>
+                </div>
+                <div class="card icon-card">
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>서브 타겟 (Sub)</h3>
+                    <p>인하대병원, 시네폴리스 등 미래 탄탄한 임대수요를 선점하려는 <strong>4050 수익형 부동산 투자자</strong> 및 노후 주택 갈아타기 수요.</p>
+                </div>
+                <div class="card icon-card">
+                    <div class="icon"><i class="fa-solid fa-crown"></i></div>
+                    <h3>브랜드 포지셔닝</h3>
+                    <p><strong>"김포 풍무의 하이엔드 랜드마크,<br>e편한세상 시티에서 누리는 완벽한 시티라이프"</strong><br>대체 불가한 하이엔드 자산으로 각인.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Marketing Mix Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">온·오프라인 통합 마케팅 믹스</h2>
+            <div class="grid grid-2">
+                <div class="marketing-box">
+                    <h3><i class="fa-solid fa-laptop-code" style="margin-right:10px; color:var(--accent-color);"></i>온라인 (Digital DB 확보)</h3>
+                    <ul>
+                        <li>타겟 맞춤형 퍼포먼스 마케팅 집중 (메타/카카오/구글 GDN 배너 광고)</li>
+                        <li>부동산 전문 유명 유튜버 및 인플루언서 단지 리뷰 영상 제작·송출</li>
+                        <li>지역 맘카페(김포맘, 강서맘 등) 및 부동산 커뮤니티 정밀 바이럴 마케팅</li>
+                    </ul>
+                </div>
+                <div class="marketing-box">
+                    <h3><i class="fa-solid fa-handshake" style="margin-right:10px; color:var(--accent-color);"></i>오프라인 (현장 밀착 영업)</h3>
+                    <ul>
+                        <li>광역 거점(마곡, 여의도, 일산 등) 출퇴근 시간대 게릴라 현수막 및 전단 직투</li>
+                        <li>대형 마트, 풍무역 등 유동인구 초밀집 지역 게릴라 팝업 부스 운영</li>
+                        <li>지역 내 우수 부동산 중개업소(MGM) 네트워크 전면 가동 및 VIP 사업설명회 개최</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Action Plan Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">단계별 영업 및 분양 전략</h2>
+            <div class="grid grid-3">
+                <div class="timeline-card">
+                    <h3 style="color: var(--accent-color); font-size: 16px; margin-bottom: 5px;">STEP 1</h3>
+                    <h3>사전 붐업기</h3>
+                    <p>검증된 에이스 본부장/팀장급 최우선 투입. 기존 보유 VIP 투자자 DB 대상 티저 영업 및 김포/마곡 일대 MGM 수수료 확약서 집중 접수.</p>
+                </div>
+                <div class="timeline-card">
+                    <h3 style="color: var(--accent-color); font-size: 16px; margin-bottom: 5px;">STEP 2</h3>
+                    <h3>집중 분양기</h3>
+                    <p>주말 이벤트로 M/H 내방객 극대화. 내방객 1:1 맞춤형 세무/대출 컨설팅 제공 및 '로열층 프리미엄' 강조를 통한 조기 계약 전환 유도.</p>
+                </div>
+                <div class="timeline-card">
+                    <h3 style="color: var(--accent-color); font-size: 16px; margin-bottom: 5px;">STEP 3</h3>
+                    <h3>잔여 클리어</h3>
+                    <p>미계약 분석 및 프로모션 기획. 정예 조직 편성을 통한 '줍줍' 타겟 집중 TM 영업 및 법인 투자자·다구좌(통매기) 수요 발굴.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Team Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">운영 조직 구성</h2>
+            <div class="grid grid-4">
+                <div class="card" style="text-align: center; padding: 30px;">
+                    <i class="fa-solid fa-sitemap" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3 style="justify-content: center;">총괄 본부장</h3>
+                    <p>프로젝트 총괄 지휘 및 시행/시공사 핵심 커뮤니케이션</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 30px;">
+                    <i class="fa-solid fa-bullhorn" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3 style="justify-content: center;">마케팅 기획팀</h3>
+                    <p>효율적인 광고 매체 집행, 홍보물 기획 제작 및 이벤트 운영</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 30px;">
+                    <i class="fa-solid fa-people-group" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3 style="justify-content: center;">영업 총괄 조직</h3>
+                    <p>수도권 서부 권역 오피스텔 완판 경험이 풍부한 베테랑 요원 투입</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 30px;">
+                    <i class="fa-solid fa-headset" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3 style="justify-content: center;">업무 지원팀</h3>
+                    <p>계약서 발행, 입금 실시간 확인 및 고객 서류/DB 철저 관리</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Why Us Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center;">
+                <div class="overview-img">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/2328861691369639250" alt="성공적인 비즈니스 파트너십">
+                </div>
+                <div class="why-us-text">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">왜 [제안사명]인가?</h2>
+                    
+                    <div class="why-us-item">
+                        <strong>실전형 에이스 조직</strong>
+                        <p>단순히 머릿수만 채우는 조직이 아닙니다. 혹독한 시장에서도 실계약을 창출해 내는 정예 요원만이 현장에 투입됩니다.</p>
+                    </div>
+                    
+                    <div class="why-us-item">
+                        <strong>데이터 기반 마케팅</strong>
+                        <p>비용만 낭비하는 맹목적인 광고를 배제합니다. 당사가 다년간 축적한 진성 투자자 DB를 활용하여 정확한 핀셋 마케팅을 실행합니다.</p>
+                    </div>
+                    
+                    <div class="why-us-item">
+                        <strong>끝까지 책임지는 근성</strong>
+                        <p>단 1실의 악성 미분양도 허용하지 않겠다는 집념으로, 약속된 목표 기한 내 100% 분양 완료를 자신 있게 약속드립니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CTA / Footer Section -->
+    <footer class="section bg-primary cta-section">
+        <div class="container">
+            <h2>100% 완판으로 증명하겠습니다.</h2>
+            <p>e편한세상 시티 풍무역의 핵심 가치를 가장 잘 아는 파트너,<br><strong>[제안사 회사명]</strong>이 성공 분양의 마침표를 찍겠습니다.</p>
+            <div class="contact-info">
+                감사합니다. 추가적인 질의응답 시간을 갖도록 하겠습니다.<br>
+                contact@yourcompany.com | 02-123-4567
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
